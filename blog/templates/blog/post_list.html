@@ -1,24 +1,11 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
-	<title>dioneuty django blog</title>
-</head>
-<body>
-	<div>
-		<h1>django 블로그 테스트 중</h1>
-	</div>
-	<p>향후 고도화를 통해, 복잡한 아웃라이너 + 블로그 형식의 사이트로 만들까 생각 중</p>
+{% extends 'blog/base.html' %}
 
+{% block content %}
 {% for post in posts %}
-    <div>
-        <p>게시일: {{ post.created_date }}</p>
-        <h1><a href="">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
+<div>
+	<p>게시일: {{ post.created_date }}</p>
+	<h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+	<p>{{ post.text|linebreaksbr }}</p>
+</div>
 {% endfor %}
-</body>
-</html>
+{% endblock %}
