@@ -9,12 +9,32 @@
 	<title>dioneuty django blog</title>
 </head>
 <body>
-	<div>
-		<h1>django 블로그 테스트 중</h1>
-	</div>
-	<p>향후 고도화를 통해, 복잡한 아웃라이너 + 블로그 형식의 사이트로 만들까 생각 중</p>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">
+			<nav aria-label="breadcrumb">
+			  <ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="#">Home</a></li>
+				<li class="breadcrumb-item active" aria-current="page">About</li>
+			  </ol>
+			</nav>
 
-    {% block content %}
-    {% endblock %}
+		</div>
+		<div class="col-sm-12 col-md-3 leftFrame bg-primary">
+			<div style="min-height: 1px;">
+
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-9 rightFrame bg-light">
+			<div>
+				<h1>django 블로그 테스트 중</h1>
+			</div>
+			<p>향후 고도화를 통해, 복잡한 아웃라이너 + 블로그 형식의 사이트로 만들까 생각 중</p>
+
+			{% block content %}
+			{% endblock %}
+		</div>
+	</div>
+</div>
 </body>
 </html>
